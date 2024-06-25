@@ -38,3 +38,6 @@ jobs:
         TF_VAR_aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
         TF_VAR_aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         TF_VAR_aws_region: "us-west-1"  # Adjust this to match your desired region
+        
+    - name: Upload files to S3
+      run: aws s3 sync website/ s3://abila-static-website-bucket-v2 --delete
