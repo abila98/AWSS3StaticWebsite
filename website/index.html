@@ -10,14 +10,14 @@
             background-color: #f8f9fa;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             color: #343a40;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensures the page fills the viewport height */
         }
         .container {
             text-align: center;
+            margin-bottom: auto; /* Pushes .container to the top */
         }
         h1 {
             font-size: 2.5em;
@@ -34,6 +34,15 @@
         a:hover {
             text-decoration: underline;
         }
+        .counter-number {
+            text-align: center;
+            margin-top: auto; /* Pushes .counter-number to the bottom */
+            padding: 20px; /* Example padding */
+            background-color: #f0f0f0; /* Example background color */
+        }
+        .counter-number p {
+            font-size: 1.2em; /* Example font size */
+        }
     </style>
 </head>
 <body>
@@ -42,6 +51,12 @@
         <p>This is the home page of my awesome website.</p>
         <p><a href="error.html">Click here to see the error page</a></p>
     </div>
+
+    <div class="counter-number">
+        <!-- Content updated dynamically by JavaScript -->
+    </div>
+
+    <!-- JavaScript file inclusion -->
+    <script src="index.js"></script>
 </body>
 </html>
-

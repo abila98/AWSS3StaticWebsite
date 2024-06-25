@@ -40,5 +40,6 @@ resource "aws_s3_bucket_policy" "bucket_policy" {
       }
     ]
   })
+depends_on = [null_resource.wait_for_bucket_creation]
 }
 
