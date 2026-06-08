@@ -5,11 +5,9 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    region         = "us-west-1"
-    bucket         = "staticwebsite-terraform-s3-bucket-v1"
-    key            = "state.tfstate"
-    dynamodb_table = "staticwebsite-terraform-state-lock"
-    encrypt        = true
+    bucket       = "staticwebsite-terraform-s3-bucket-v2"
+    key          = "state.tfstate"
+    region       = "us-west-1"
   }
 }
 

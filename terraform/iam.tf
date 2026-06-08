@@ -36,8 +36,8 @@ resource "aws_iam_policy" "dynamodb_policy" {
         ]
         Effect = "Allow"
         Resource = [
-          "arn:aws:dynamodb:${var.region}:${data.aws_caller_identity.current.account_id}:table/${data.aws_dynamodb_table.counter_dynamodb.name}",
-          "arn:aws:dynamodb:${var.region}:${data.aws_caller_identity.current.account_id}:table/${data.aws_dynamodb_table.counter_dynamodb.name}/index/*"
+          "arn:aws:dynamodb:${var.region}:${data.aws_caller_identity.current.account_id}:table/${aws_dynamodb_table.counter_dynamodb.name}",
+          "arn:aws:dynamodb:${var.region}:${data.aws_caller_identity.current.account_id}:table/${aws_dynamodb_table.counter_dynamodb.name}/index/*"
         ]
       }
     ]

@@ -1,6 +1,6 @@
 # Create an S3 bucket for storing Terraform state
 resource "aws_s3_bucket" "tfstate_bucket" {
-  bucket = "staticwebsite-terraform-s3-bucket-v1"
+  bucket = "staticwebsite-terraform-s3-bucket-v2"
   acl    = "private"
   versioning {
     enabled = true
@@ -30,18 +30,4 @@ resource "aws_s3_bucket_versioning" "S3_with_versioning" {
   }
 }
 
-# Create a DynamoDB table for Terraform state locking
-resource "aws_dynamodb_table" "remotestate_table" {
-  name         = "staticwebsite-terraform-state-lock"
-  hash_key     = "LockID"
-  billing_mode = "PAY_PER_REQUEST"
 
-  attribute {
-    name = "LockID"
-    type = "S"
-  }
-
-  tags = {
-    Name = "staticwebsite-dynamodb"
-  }
-}
